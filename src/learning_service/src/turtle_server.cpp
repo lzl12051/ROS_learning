@@ -27,14 +27,19 @@ int main(int argc, char **argv)
 
     while (ros::ok())
     {
+        //Need this to check the callback function queue
+        ros::spinOnce();
+
         if (pubCommand)
         {
             geometry_msgs::Twist vel;
-            vel.angular.x = 0.2;
-            vel.linear.z = 0.5;
+            vel.angular.z = 0.2;
+            vel.linear.x = 0.5;
             turtle_vel_pub.publish(vel);
         }
+
         loop_rate.sleep();
     }
+
     return 0;
 }
