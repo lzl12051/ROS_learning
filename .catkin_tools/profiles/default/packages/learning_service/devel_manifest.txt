@@ -1,7 +1,0 @@
-learning_service
-/home/zhilong/catkin_ws/devel/.private/learning_service/cmake.lock /home/zhilong/catkin_ws/devel/./cmake.lock
-/home/zhilong/catkin_ws/devel/.private/learning_service/share/learning_service/cmake/learning_serviceConfig-version.cmake /home/zhilong/catkin_ws/devel/share/learning_service/cmake/learning_serviceConfig-version.cmake
-/home/zhilong/catkin_ws/devel/.private/learning_service/share/learning_service/cmake/learning_serviceConfig.cmake /home/zhilong/catkin_ws/devel/share/learning_service/cmake/learning_serviceConfig.cmake
-/home/zhilong/catkin_ws/devel/.private/learning_service/lib/learning_service/turtle_spawn_client /home/zhilong/catkin_ws/devel/lib/learning_service/turtle_spawn_client
-/home/zhilong/catkin_ws/devel/.private/learning_service/lib/learning_service/turtle_server /home/zhilong/catkin_ws/devel/lib/learning_service/turtle_server
-/home/zhilong/catkin_ws/devel/.private/learning_service/lib/pkgconfig/learning_service.pc /home/zhilong/catkin_ws/devel/lib/pkgconfig/learning_service.pc
