@@ -21,14 +21,15 @@ bool serverCallback(custom_service::person::Request &req,
              req.age,
              req.sex);
     std::string age = std::to_string(req.age);
-    if (running_flag)
-    {
-        res.result = age;
-    }
-    else
-    {
-        res.result = "-1";
-    }
+    res.result = running_flag == true?age:"-1";
+    // if (running_flag)
+    // {
+    //     res.result = age;
+    // }
+    // else
+    // {
+    //     res.result = "-1";
+    // }
 
     return true;
 }
