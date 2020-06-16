@@ -16,7 +16,7 @@ int main(int argc, char **argv)
         using namespace geometry_msgs;
         Twist vel_msg;
         vel_msg.linear.x = 1;
-        vel_msg.angular.z = 0.2;
+        vel_msg.angular.z = 1;
         turtle_vel_pub.publish(vel_msg);
         ROS_INFO("Publish turtle velocity command[%0.2f m/s, %0.2f rand/s", vel_msg.linear.x, vel_msg.angular.z);
         
