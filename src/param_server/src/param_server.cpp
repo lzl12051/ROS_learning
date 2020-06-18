@@ -42,6 +42,12 @@ int main(int argc, char **argv)
     setParam(size_of_list, key_list, value_list);
     getParam(sizeof(key_list) / 32, key_list);
 
+    ros::service::waitForService("/clear");
+    ros::ServiceClient refresh_bg = nh.serviceClient<std_srvs::Empty>("/clear");
+    std_srvs::Empty refresh;
+    refresh_bg.call(refresh);
+
+
 
     return 0;
 }
