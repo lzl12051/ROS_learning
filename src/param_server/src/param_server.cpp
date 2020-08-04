@@ -34,10 +34,9 @@ int main(int argc, char **argv)
     int size_of_list = sizeof(key_list) / 32;
     getParam(sizeof(key_list) / 32, key_list);
     double value_list[size_of_list];
-    for(int i=0;i<size_of_list;i++)
-    {
-        std::cout<<"Please input the parameter "<<i<<": ";
-        std::cin>>value_list[i];
+    for (int i = 0; i < size_of_list; i++) {
+        std::cout << "Please input the parameter " << i << ": ";
+        std::cin >> value_list[i];
     }
     setParam(size_of_list, key_list, value_list);
     getParam(sizeof(key_list) / 32, key_list);
@@ -46,8 +45,6 @@ int main(int argc, char **argv)
     ros::ServiceClient refresh_bg = nh.serviceClient<std_srvs::Empty>("/clear");
     std_srvs::Empty refresh;
     refresh_bg.call(refresh);
-
-
 
     return 0;
 }

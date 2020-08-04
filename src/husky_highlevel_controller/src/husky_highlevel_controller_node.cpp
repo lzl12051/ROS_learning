@@ -1,32 +1,14 @@
 #include <ros/ros.h>
-#include <sensor_msgs/LaserScan.h>
+#include "husky_highlevel_controller/HuskyHighlevelController.hpp"
 
-void callback(const sensor_msgs::LaserScan &msg)
-{
-    float smallest_distence=100;
+int main(int argc, char **argv) {
+    ros::init(argc, argv, "husky_highlevel_controller");
+    ros::NodeHandle nodeHandle("~");
 
-    int arr_size = floor((msg.angle_max - msg.angle_min)/msg.angle_increment);
 
-    for (int i=0;i<arr_size; i++)
-    {
-        if (msg.ranges[i] < smallest_distence)
-        {
-            smallest_distence = msg.ranges[i];
-        }
-    }
-    
-    ROS_INFO("ROS_INFO Minimum laser distance(m): %lf", smallest_distence);
-}
+    ROS_INFO("Node running");
+    husky_highlevel_controller::HuskyHighlevelController HuskyHighlevelController(nodeHandle);
 
-int main(int argc, char **argv)
-{
-    using namespace ros;
-    init(argc, argv, "scan_subscriber");
-    NodeHandle nh;
-    Subscriber scan_sub;
-    scan_sub = nh.subscribe("/scan", 200, callback);
-
-    spin();
+    ros::spin();
     return 0;
-
 }

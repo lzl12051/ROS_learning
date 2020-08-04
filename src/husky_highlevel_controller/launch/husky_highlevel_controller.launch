@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
+
     <!-- <arg name="world" default="robocup14_spl_field.world"/> -->
     <include file="$(find husky_gazebo)/launch/husky_empty_world.launch">
+        <arg name="world_name" value="$(find husky_highlevel_controller)/worlds/singlePillar.world"/>
         <arg name="laser_enabled" value="true"/>
     </include>
 
-    <node pkg = "husky_highlevel_controller" type="husky_highlevel_controller_node" name="husky_highlevel_controller"
-        output="screen" launch-prefix="gnome-terminal --command">
-        <!-- <rosparam command="load" file="$(find husky_highlevel_controller)/config/config.yaml"/> -->
-    </node>
-
     <node pkg="rviz" type="rviz" name="rviz"/>
-    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen"/>
+    <!--    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen"/>-->
+
+    <node pkg="husky_highlevel_controller" type="husky_highlevel_controller_node" name="husky_highlevel_controller"
+          output="screen" launch-prefix="gnome-terminal --command">
+        <rosparam command="load" file="$(find husky_highlevel_controller)/config/config.yaml"/>
+    </node>
 </launch>

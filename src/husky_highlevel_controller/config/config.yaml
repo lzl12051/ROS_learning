@@ -1,1 +1,3 @@
-scan_sub_top
+queueSize: 10
+p_vel_gain: 0.5
+p_ang_gain: 0.7

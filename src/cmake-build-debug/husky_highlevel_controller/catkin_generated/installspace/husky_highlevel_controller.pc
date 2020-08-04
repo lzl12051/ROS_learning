@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: husky_highlevel_controller
+Description: Description of husky_highlevel_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
